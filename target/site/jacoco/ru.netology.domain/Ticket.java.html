@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ticket.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">FindTicket</a> &gt; <a href="index.source.html" class="el_package">ru.netology.domain</a> &gt; <span class="el_source">Ticket.java</span></div><h1>Ticket.java</h1><pre class="source lang-java linenums">package ru.netology.domain;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+public class Ticket implements Comparable&lt;Ticket&gt; {
+    private int id;
+    private int cost;
+    private String fromFly;
+    private String toFly;
+    private int time;
+
+<span class="fc" id="L14">    public Ticket(int id, int cost, String fromFly, String toFly, int time) {</span>
+<span class="fc" id="L15">        this.id = id;</span>
+<span class="fc" id="L16">        this.cost = cost;</span>
+<span class="fc" id="L17">        this.fromFly = fromFly;</span>
+<span class="fc" id="L18">        this.toFly = toFly;</span>
+<span class="fc" id="L19">        this.time = time;</span>
+<span class="fc" id="L20">    }</span>
+
+    public int getId() {
+<span class="nc" id="L23">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L27">        this.id = id;</span>
+<span class="nc" id="L28">    }</span>
+
+    public int getCost() {
+<span class="nc" id="L31">        return cost;</span>
+    }
+
+    public void setCost(int cost) {
+<span class="nc" id="L35">        this.cost = cost;</span>
+<span class="nc" id="L36">    }</span>
+
+    public String getFromFly() {
+<span class="fc" id="L39">        return fromFly;</span>
+    }
+
+    public void setFromFly(String fromFly) {
+<span class="nc" id="L43">        this.fromFly = fromFly;</span>
+<span class="nc" id="L44">    }</span>
+
+    public String getToFly() {
+<span class="fc" id="L47">        return toFly;</span>
+    }
+
+    public void setToFly(String toFly) {
+<span class="nc" id="L51">        this.toFly = toFly;</span>
+<span class="nc" id="L52">    }</span>
+
+    public int getTime() {
+<span class="nc" id="L55">        return time;</span>
+    }
+
+    public void setTime(int time) {
+<span class="nc" id="L59">        this.time = time;</span>
+
+
+<span class="nc" id="L62">    }</span>
+
+    @Override
+    public int compareTo(Ticket otherTicket) {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (cost &lt; otherTicket.cost) {</span>
+<span class="fc" id="L67">            return -1;</span>
+        }
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if (cost &gt; otherTicket.cost) {</span>
+<span class="fc" id="L70">            return 1;</span>
+        }
+<span class="nc" id="L72">        return 0;</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">        if (!(o instanceof Ticket)) return false;</span>
+<span class="nc" id="L79">        Ticket ticket = (Ticket) o;</span>
+<span class="nc bnc" id="L80" title="All 10 branches missed.">        return getId() == ticket.getId() &amp;&amp; getCost() == ticket.getCost() &amp;&amp; getTime() == ticket.getTime() &amp;&amp; getFromFly().equals(ticket.getFromFly()) &amp;&amp; getToFly().equals(ticket.getToFly());</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L85">        return Objects.hash(getId(), getCost(), getFromFly(), getToFly(), getTime());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

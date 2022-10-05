@@ -1,0 +1,3 @@
+ru\netology\domain\Ticket.class
+ru\netology\domain\TicketRepository.class
+ru\netology\domain\TicketManager.class
