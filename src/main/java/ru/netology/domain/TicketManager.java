@@ -3,7 +3,7 @@ package ru.netology.domain;
 import java.util.Arrays;
 
 public class TicketManager {
-    TicketRepository repository;
+    protected TicketRepository repository;
 
     public TicketManager(TicketRepository repository) {
         this.repository = repository;
@@ -25,7 +25,7 @@ public class TicketManager {
     public Ticket[] searchBy(String fromFly, String toFly) {
         Ticket[] ans = new Ticket[0];
         for (Ticket ticket : repository.findAll()) {
-            if (ticket.getFromFly() == fromFly && ticket.getToFly() == toFly) {
+            if (ticket.getFromFly().equals(fromFly) && ticket.getToFly().equals(toFly)) {
                 Ticket[] tmp = new Ticket[ans.length + 1];
                 for (int i = 0; i < ans.length; i++) {
                     tmp[i] = ans[i];
